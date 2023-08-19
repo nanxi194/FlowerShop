@@ -1,0 +1,174 @@
+.cards {
+  background-color: antiquewhite;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  display: grid;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.wrapper_end {
+  margin-left: auto;
+  margin-right: 4rem;
+}
+
+.wrapper_front {
+  margin-left: 4rem;
+}
+
+.icon {
+  padding-right: 1rem;
+}
+
+.flexcontainer {
+  display: flex;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+/*********************************** Sidebar ************************************/
+
+.filter__dropdown__background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+}
+
+.filter__dropdown {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: white;
+  width: 486px;
+  min-height: 100%;
+}
+
+.text_wrapper {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin: 2rem;
+}
+
+.filter__dropdown__actions {
+  border-top-width: 1px;
+  border-top-color: #d9d9d9;
+  border-top-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/*********************************** Sidebarbox ************************************/
+.sidebar_box {
+  height: 10rem;
+  max-height: 15rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.subtitle {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.checkbox_wrapper input[type="checkbox"] {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 0.15rem;
+  margin-right: 0.5rem;
+
+  border: 0.1rem solid #000000;
+  outline: none;
+  cursor: pointer;
+
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+input.checked {
+  background-color: white;
+  position: relative;
+}
+
+input.checked::before {
+  content: "■";
+  font-size: 1.5rem;
+  color: #000000;
+  position: absolute;
+  top: -0.68rem;
+  left: -0.1rem;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+.sidebar_box2 {
+  max-height: 15rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.sidebar_box2 p {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/*********************************** Sidebarbutton ************************************/
+
+/* Responsive */
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

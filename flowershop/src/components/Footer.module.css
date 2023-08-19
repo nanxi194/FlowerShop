@@ -1,0 +1,39 @@
+* {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.footer {
+  border-color: #00000066;
+  border-top-style: solid;
+  border-top-width: 1px;
+  height: 217px;
+  left: 0;
+  margin-top: 12rem;
+}
+
+.wrapper {
+  width: 279px;
+  text-align: center;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.flexcontainer {
+  display: flex;
+  flex-direction: row;
+  margin: 0 6rem;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 2rem 0;
+}

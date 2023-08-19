@@ -1,0 +1,50 @@
+* {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.flexcontainer {
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  margin: 6rem;
+  padding-left: 4rem;
+}
+
+.imgBox {
+  width: 560px;
+  max-height: 493px;
+  margin: auto;
+}
+
+.flexcontainer2 {
+  margin: auto;
+}
+
+.flexcontainer p {
+  font-size: 22px;
+  font-weight: 400;
+  padding-top: 1.5rem;
+}
+
+.flexcontainer h1 {
+  font-size: 34px;
+  font-weight: 700;
+  padding-top: 3.5rem;
+}
+
+.flexcontainer h2 {
+  font-size: 20px;
+  font-weight: 400;
+  padding-top: 4rem;
+  white-space: nowrap;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flexcontainer {
+    flex-direction: column;
+  }
+}

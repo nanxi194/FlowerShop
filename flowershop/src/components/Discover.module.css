@@ -1,0 +1,36 @@
+* {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  line-height: normal;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 3.4px;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.imgBox {
+  width: 279px;
+  max-height: 219px;
+}
+
+.wrapper {
+  text-align: center;
+  padding: 3rem;
+  margin: 0 auto;
+}
+
+.wrapper p {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.flexcontainer {
+  display: flex;
+  flex-direction: row;
+  margin: 6rem;
+}
