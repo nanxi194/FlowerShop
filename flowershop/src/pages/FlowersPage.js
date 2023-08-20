@@ -24,29 +24,68 @@ function FlowersPage(props) {
   const flowerData = props.data;
   const [isOpen, setIsOpen] = useState(false);
   const showSidebar = () => setIsOpen(!isOpen);
-  const handleApply = () => setIsOpen(false);
   const dropdownRef = useRef(null);
 
-  const [checked, setChecked] = useState(false);
-  const handleChange = () => {
-    setChecked(!checked);
-  };
-
+  const [checkedAvailability, setCheckedAvailability] = useState([
+    { type: "In stock", state: false },
+    { type: "Out of stock", state: false },
+  ]);
+  const [checkedColor, setCheckedColor] = useState([
+    { type: "White", state: false },
+    { type: "Yellow", state: false },
+    { type: "Pink", state: false },
+    { type: "Orange", state: false },
+  ]);
+  const [checkedType, setCheckedType] = useState([
+    { type: "Lilies", state: false },
+    { type: "Roses", state: false },
+    { type: "Tulips", state: false },
+    { type: "Sunflowers", state: false },
+  ]);
   const [range, setRange] = useState([5, 30]);
-  function handleChanges(event, newValue) {
-    setRange(newValue);
+
+  function handleFilterSave() {
+    const newData = [
+      { title: "availability", filterdata: [...checkedAvailability] },
+      { title: "price", filterdata: [...range] },
+      { title: "color", filterdata: [...checkedColor] },
+      { title: "types", filterdata: [...checkedType] },
+    ];
+    dispatch(
+      filterActions.FILTER({
+        filterquests: newData,
+        flowerfilterdata: flowerData,
+      })
+    );
+    setIsOpen(false);
   }
 
-  const dispatch = useDispatch();
-  const [sort, setSort] = useState("default");
-  const products = useSelector((state) => state.filter.products);
-  const totalProducts = useSelector((state) => state.filter.totalProducts);
+  function handleAvailabilityChange(index) {
+    const nextCheckedAvailability = [...checkedAvailability];
+    nextCheckedAvailability[index].state = !checkedAvailability[index].state;
+    setCheckedAvailability(nextCheckedAvailability);
+  }
+
+  const handleColorChange = (index) => {
+    const nextCheckedColor = [...checkedColor];
+    nextCheckedColor[index].state = !checkedColor[index].state;
+    setCheckedColor(nextCheckedColor);
+  };
+
+  const handleTypeChange = (index) => {
+    const nextCheckedType = [...checkedType];
+    nextCheckedType[index].state = !checkedType[index].state;
+    setCheckedType(nextCheckedType);
+  };
+
+  function handleRangeChange(event, newValue) {
+    setRange(newValue);
+  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       const isDropdownClick =
         dropdownRef.current && dropdownRef.current.contains(event.target);
-
       if (isDropdownClick) {
         // If the ref is not defined or the user clicked on the menu, we don’t do anything.
         return;
@@ -54,14 +93,17 @@ function FlowersPage(props) {
       // Otherwise we close the menu.
       setIsOpen(false);
     };
-
     document.addEventListener("mousedown", handleClickOutside); // handle desktops
-
     // Event cleanup
     return () => {
       document.removeEventListener("mousedown", handleClickOutside); // handle desktops
     };
   }, [dropdownRef]);
+
+  const dispatch = useDispatch();
+  const [sort, setSort] = useState("default");
+  const products = useSelector((state) => state.filter.products);
+  const totalProducts = useSelector((state) => state.filter.totalProducts);
 
   useEffect(() => {
     if (sort === "default") {
@@ -89,16 +131,15 @@ function FlowersPage(props) {
         </p>
         <Filter size={20} className={classes.icon} />
         <p>Showing {totalProducts} results</p>
-        <p className={classes.wrapper_end}>
-          Sort by:
+        <div className={classes.wrapper_end}>
           <select onChange={(e) => setSort(e.target.value)}>
-            <option value="default">Default</option>
+            <option value="default">Sort by: Featured</option>
             <option value="asc">Alphabetically, A-Z</option>
             <option value="desc">Alphabetically, Z-A</option>
             <option value="low to high">Price, low to high</option>
             <option value="high to low">Price, high to low</option>
           </select>
-        </p>
+        </div>
       </div>
 
       {isOpen && (
@@ -112,15 +153,15 @@ function FlowersPage(props) {
                 <li>
                   <Checkbox
                     label="In stock"
-                    value={checked}
-                    onChange={handleChange}
+                    value={checkedAvailability[0].state}
+                    onChange={() => handleAvailabilityChange(0)}
                   />
                 </li>
                 <li>
                   <Checkbox
                     label="Out of stock"
-                    value={checked}
-                    onChange={handleChange}
+                    value={checkedAvailability[1].state}
+                    onChange={() => handleAvailabilityChange(1)}
                   />
                 </li>
               </ul>
@@ -131,7 +172,7 @@ function FlowersPage(props) {
               <div className={classes.filter__dropdown__actions}></div>
               <Slider
                 value={range}
-                onChange={handleChanges}
+                onChange={handleRangeChange}
                 valueLabelDisplay="auto"
                 max={110}
               />
@@ -147,29 +188,29 @@ function FlowersPage(props) {
                 <li>
                   <Checkbox
                     label="White"
-                    value={checked}
-                    onChange={handleChange}
+                    value={checkedColor[0].state}
+                    onChange={() => handleColorChange(0)}
                   />
                 </li>
                 <li>
                   <Checkbox
                     label="Yellow"
-                    value={checked}
-                    onChange={handleChange}
+                    value={checkedColor[1].state}
+                    onChange={() => handleColorChange(1)}
                   />
                 </li>
                 <li>
                   <Checkbox
                     label="Pink"
-                    value={checked}
-                    onChange={handleChange}
+                    value={checkedColor[2].state}
+                    onChange={() => handleColorChange(2)}
                   />
                 </li>
                 <li>
                   <Checkbox
                     label="Orange"
-                    value={checked}
-                    onChange={handleChange}
+                    value={checkedColor[3].state}
+                    onChange={() => handleColorChange(3)}
                   />
                 </li>
               </ul>
@@ -182,33 +223,50 @@ function FlowersPage(props) {
                 <li>
                   <Checkbox
                     label="Lilies"
-                    value={checked}
-                    onChange={handleChange}
+                    value={checkedType[0].state}
+                    onChange={() => handleTypeChange(0)}
                   />
                 </li>
                 <li>
                   <Checkbox
                     label="Roses"
-                    value={checked}
-                    onChange={handleChange}
+                    value={checkedType[1].state}
+                    onChange={() => handleTypeChange(1)}
                   />
                 </li>
                 <li>
                   <Checkbox
                     label="Tulips"
-                    value={checked}
-                    onChange={handleChange}
+                    value={checkedType[2].state}
+                    onChange={() => handleTypeChange(2)}
+                  />
+                </li>
+                <li>
+                  <Checkbox
+                    label="Sunflowers"
+                    value={checkedType[3].state}
+                    onChange={() => handleTypeChange(3)}
                   />
                 </li>
               </ul>
+            </div>
+
+            <div>
+              <button
+                onClick={handleFilterSave}
+                className={classes.save_button}
+              >
+                Save
+              </button>
             </div>
           </div>
         </div>
       )}
 
       <div className={classes.cards}>
-        {products.map((product) => (
+        {products.map((product, i) => (
           <FlowerCard
+            key={i}
             title={product.title}
             price={product.price}
             src={product.image}

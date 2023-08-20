@@ -1,6 +1,7 @@
 .imge {
   height: 270px;
   width: 229px;
+  margin-bottom: 0.5rem;
 }
 
 .text {
@@ -11,4 +12,5 @@
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  margin-bottom: 0.5rem;
 }

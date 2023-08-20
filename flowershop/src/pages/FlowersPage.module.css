@@ -1,10 +1,15 @@
 .cards {
-  background-color: antiquewhite;
   margin-left: 4rem;
   margin-right: 4rem;
   display: grid;
   gap: 4rem;
   justify-content: center;
+}
+
+.flexcontainer {
+  display: flex;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 .wrapper_end {
@@ -14,16 +19,32 @@
 
 .wrapper_front {
   margin-left: 4rem;
+  cursor: pointer;
+}
+
+.flexcontainer p {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
 }
 
 .icon {
   padding-right: 1rem;
 }
 
-.flexcontainer {
-  display: flex;
-  margin-top: 4rem;
-  margin-bottom: 1rem;
+select {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
 }
 
 /*********************************** Sidebar ************************************/
@@ -74,7 +95,7 @@
 
 /*********************************** Sidebarbox ************************************/
 .sidebar_box {
-  height: 10rem;
+  max-height: 10rem;
   max-height: 15rem;
   margin-top: 4rem;
   margin-bottom: 2rem;
@@ -143,6 +164,27 @@ li {
 
 .sidebar_box2 p {
   color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.save_button {
+  margin-top: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  border: none;
+  width: 85%;
+  height: 2.5rem;
+  background-color: #000000;
+  cursor: pointer;
+
+  color: white;
   font-family: "Inter-Regular", Helvetica;
   font-size: 16px;
   font-weight: 400;
