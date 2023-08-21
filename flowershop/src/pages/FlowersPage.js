@@ -44,7 +44,7 @@ function FlowersPage(props) {
   const [checkedType, setCheckedType] = useState([
     { type: "Lilies", state: false },
     { type: "Roses", state: false },
-    { type: "Tulips", state: false },
+    { type: "Tuilps", state: false },
     { type: "Sunflowers", state: false },
   ]);
   const [range, setRange] = useState([0, 400]);
@@ -260,7 +260,7 @@ function FlowersPage(props) {
                 </li>
                 <li>
                   <Checkbox
-                    label="Tulips"
+                    label="Tuilps"
                     value={checkedType[2].state}
                     onChange={() => handleTypeChange(2)}
                   />
