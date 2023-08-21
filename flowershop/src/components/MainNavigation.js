@@ -21,6 +21,16 @@ function MainNavigation() {
                   isActive ? classes.active : undefined
                 }
               >
+                SAME DAY DELIVERY
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/flowers"
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
                 FLOWERS
               </NavLink>
             </li>

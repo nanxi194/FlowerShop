@@ -7,13 +7,14 @@ const DISCOVERS = [
   { id: "p2", title: "Wedding" },
   { id: "p3", title: "Wedding" },
   { id: "p4", title: "Wedding" },
+  { id: "p5", title: "Wedding" },
 ];
 
 function Discover() {
   return (
     <>
       <h1 className={classes.title}>DISCOVER</h1>
-      <div className={classes.flexcontainer}>
+      <div className={classes.cards}>
         {DISCOVERS.map((prod) => (
           <div className={classes.wrapper} key={prod.id}>
             <img alt="dicoverimg" src={dicoverimg} className={classes.imgBox} />

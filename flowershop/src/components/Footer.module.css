@@ -37,3 +37,31 @@
   font-weight: 400;
   margin: 2rem 0;
 }
+
+/*********************************** Sidebarbutton ************************************/
+
+@media (min-width: 500px) {
+  .flexcontainer {
+    flex-direction: column;
+    margin: 0 4rem;
+  }
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .flexcontainer {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 900px) {
+  .flexcontainer {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flexcontainer {
+    flex-direction: row;
+  }
+}

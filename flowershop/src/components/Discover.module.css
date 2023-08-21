@@ -13,24 +13,55 @@
 }
 
 .imgBox {
-  width: 279px;
-  max-height: 219px;
+  width: 229px;
+  max-height: 169px;
 }
 
 .wrapper {
+  margin-top: 6rem;
   text-align: center;
-  padding: 3rem;
-  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper p {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0;
 }
 
-.flexcontainer {
-  display: flex;
-  flex-direction: row;
-  margin: 6rem;
+.cards {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/*********************************** Sidebarbutton ************************************/
+
+/* Responsive */
+
+@media (min-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

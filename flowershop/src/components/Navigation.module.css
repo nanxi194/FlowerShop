@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Helvetica;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  left: 0;
+  top: 0;
+  margin: auto;
+  background-color: aliceblue;
+  position: sticky;
+  z-index: 1;
+}
+
+/* navbar */
+.navbar {
+  padding: 4px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+}
+
+/* logo  */
+.logo {
+  font-size: 30px;
+}
+
+/* ul  */
+.navMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8rem;
+  margin: auto;
+  padding-top: 0.8rem;
+}
+
+.navMenu a {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.navMenu a:hover {
+  color: #ff6868;
+}
+
+.navMenu a.active {
+  color: #ff6868;
+}
+
+/* cart */
+.listCart {
+  padding-top: 0.8rem;
+  list-style-type: none;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.listCart p {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+/* media queries */
+@media screen and (max-width: 900px) {
+  /* hamburger */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .bar {
+    background-color: #120f0b;
+    width: 20px;
+    height: 3px;
+    display: block;
+    margin: 5px;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+
+  /* adding active class to the bars  */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* navMenu */
+
+  .navMenu {
+    position: absolute;
+    flex-direction: column;
+    gap: 0;
+    top: 70px;
+    left: -100%;
+    text-align: start;
+    width: 100%;
+    transition: 0.7s ease-in-out;
+    background-color: aliceblue;
+    padding: 10px;
+  }
+
+  .navMenu.active {
+    left: 0;
+  }
+
+  .navMenu li {
+    margin: 16px 0;
+  }
+}

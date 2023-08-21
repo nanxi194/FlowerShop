@@ -5,12 +5,20 @@
   line-height: normal;
 }
 
-.flexcontainer {
+/* .flexcontainer {
   padding-top: 4rem;
   display: flex;
   flex-direction: row;
   margin: 6rem;
   padding-left: 4rem;
+} */
+
+.flexcontainer {
+  margin: 6rem;
+  display: grid;
+  justify-content: center;
+
+  gap: 4rem;
 }
 
 .imgBox {
@@ -20,6 +28,8 @@
 }
 
 .flexcontainer2 {
+  padding-left: 34rem;
+  padding-right: 4rem;
   margin: auto;
 }
 
@@ -42,9 +52,66 @@
   white-space: nowrap;
 }
 
-/* Responsive layout - makes a one column layout instead of a two-column layout */
-@media (max-width: 800px) {
+/*********************************** Responsive ************************************/
+
+@media (min-width: 500px) {
   .flexcontainer {
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .imgBox {
+    width: 360px;
+    max-height: 293px;
+    margin: auto;
+  }
+  .flexcontainer2 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin: auto;
+  }
+}
+
+@media (min-width: 600px) {
+  .flexcontainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .imgBox {
+    width: 360px;
+    max-height: 293px;
+    margin: auto;
+  }
+  .flexcontainer2 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .flexcontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imgBox {
+    width: 560px;
+    max-height: 493px;
+  }
+  .flexcontainer2 {
+    padding-left: 12rem;
+    padding-right: 4rem;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flexcontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imgBox {
+    width: 560px;
+    max-height: 493px;
+  }
+  .flexcontainer2 {
+    padding-left: 12rem;
+    padding-right: 4rem;
+    margin: auto;
   }
 }

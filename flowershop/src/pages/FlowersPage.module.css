@@ -1,9 +1,10 @@
 .cards {
-  margin-left: 4rem;
-  margin-right: 4rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
   display: grid;
-  gap: 4rem;
+  gap: 8rem;
   justify-content: center;
+  align-items: center;
 }
 
 .flexcontainer {
@@ -197,12 +198,18 @@ li {
 /*********************************** Sidebarbutton ************************************/
 
 /* Responsive */
+
+@media (min-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media (min-width: 600px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (min-width: 900px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
@@ -211,6 +218,6 @@ li {
 
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }

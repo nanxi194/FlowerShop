@@ -14,3 +14,50 @@
   white-space: nowrap;
   margin-bottom: 0.5rem;
 }
+
+/*********************************** Sidebarbutton ************************************/
+
+/* Responsive */
+
+@media (min-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .imge {
+    height: 270px;
+    width: 229px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imge {
+    height: 240px;
+    width: 199px;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .imge {
+    height: 240px;
+    width: 199px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .imge {
+    height: 270px;
+    width: 229px;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -5,6 +5,7 @@ import { Filter } from "react-bootstrap-icons";
 import Slider from "@mui/material/Slider";
 import { useDispatch, useSelector } from "react-redux";
 import { filterActions } from "../store/filter-slice";
+import Footer from "../components/Footer";
 
 const Checkbox = ({ label, value, onChange }) => {
   return (
@@ -297,6 +298,8 @@ function FlowersPage(props) {
           />
         ))}
       </div>
+
+      <Footer />
     </>
   );
 }
