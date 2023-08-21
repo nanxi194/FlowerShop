@@ -26,6 +26,11 @@ function FlowersPage(props) {
   const showSidebar = () => setIsOpen(!isOpen);
   const dropdownRef = useRef(null);
 
+  const dispatch = useDispatch();
+  const [sort, setSort] = useState("default");
+  const products = useSelector((state) => state.filter.products);
+  const totalProducts = useSelector((state) => state.filter.totalProducts);
+
   const [checkedAvailability, setCheckedAvailability] = useState([
     { type: "In stock", state: false },
     { type: "Out of stock", state: false },
@@ -42,12 +47,12 @@ function FlowersPage(props) {
     { type: "Tulips", state: false },
     { type: "Sunflowers", state: false },
   ]);
-  const [range, setRange] = useState([5, 30]);
+  const [range, setRange] = useState([0, 400]);
 
   function handleFilterSave() {
     const newData = [
       { title: "availability", filterdata: [...checkedAvailability] },
-      { title: "price", filterdata: [...range] },
+      { title: "price", filterdata: range },
       { title: "color", filterdata: [...checkedColor] },
       { title: "types", filterdata: [...checkedType] },
     ];
@@ -55,6 +60,7 @@ function FlowersPage(props) {
       filterActions.FILTER({
         filterquests: newData,
         flowerfilterdata: flowerData,
+        sort: sort,
       })
     );
     setIsOpen(false);
@@ -100,28 +106,46 @@ function FlowersPage(props) {
     };
   }, [dropdownRef]);
 
-  const dispatch = useDispatch();
-  const [sort, setSort] = useState("default");
-  const products = useSelector((state) => state.filter.products);
-  const totalProducts = useSelector((state) => state.filter.totalProducts);
+  // useEffect(() => {
+  //   if (sort === "default") {
+  //     dispatch(filterActions.SHOW_DATA(flowerData));
+  //   }
+  //   if (sort === "desc") {
+  //     dispatch(filterActions.SORT_BY_ALPHABET_DESC(flowerData));
+  //   }
+  //   if (sort === "asc") {
+  //     dispatch(filterActions.SORT_BY_ALPHABET_ASC(flowerData));
+  //   }
+  //   if (sort === "low to high") {
+  //     dispatch(filterActions.SORT_BY_PRICE_LH(flowerData));
+  //   }
+  //   if (sort === "high to low") {
+  //     dispatch(filterActions.SORT_BY_PRICE_HL(flowerData));
+  //   }
+  // }, []);
 
   useEffect(() => {
-    if (sort === "default") {
-      dispatch(filterActions.SHOW_DATA(flowerData));
+    dispatch(filterActions.SHOW_DATA(flowerData));
+  }, []);
+
+  function handleSelection(value) {
+    setSort(value);
+    if (value === "default") {
+      dispatch(filterActions.SHOW_DATA(products));
     }
-    if (sort === "desc") {
-      dispatch(filterActions.SORT_BY_ALPHABET_DESC(flowerData));
+    if (value === "desc") {
+      dispatch(filterActions.SORT_BY_ALPHABET_DESC(products));
     }
-    if (sort === "asc") {
-      dispatch(filterActions.SORT_BY_ALPHABET_ASC(flowerData));
+    if (value === "asc") {
+      dispatch(filterActions.SORT_BY_ALPHABET_ASC(products));
     }
-    if (sort === "low to high") {
-      dispatch(filterActions.SORT_BY_PRICE_LH(flowerData));
+    if (value === "low to high") {
+      dispatch(filterActions.SORT_BY_PRICE_LH(products));
     }
-    if (sort === "high to low") {
-      dispatch(filterActions.SORT_BY_PRICE_HL(flowerData));
+    if (value === "high to low") {
+      dispatch(filterActions.SORT_BY_PRICE_HL(products));
     }
-  }, [flowerData, sort, dispatch]);
+  }
 
   return (
     <>
@@ -132,7 +156,7 @@ function FlowersPage(props) {
         <Filter size={20} className={classes.icon} />
         <p>Showing {totalProducts} results</p>
         <div className={classes.wrapper_end}>
-          <select onChange={(e) => setSort(e.target.value)}>
+          <select onChange={(e) => handleSelection(e.target.value)}>
             <option value="default">Sort by: Featured</option>
             <option value="asc">Alphabetically, A-Z</option>
             <option value="desc">Alphabetically, Z-A</option>
@@ -174,7 +198,7 @@ function FlowersPage(props) {
                 value={range}
                 onChange={handleRangeChange}
                 valueLabelDisplay="auto"
-                max={110}
+                max={400}
               />
               <p>
                 Price range: ${range[0]} - ${range[1]}

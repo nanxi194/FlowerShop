@@ -51,9 +51,11 @@ const filterSlice = createSlice({
     FILTER(state, action) {
       const newFilterData = [...action.payload.filterquests];
       const newData = [...action.payload.flowerfilterdata];
+      const sort = action.payload.sort;
       const tmpData = [];
       const tmpData2 = [];
       const tmpData3 = [];
+      const tmpData4 = [];
 
       // availability
       newFilterData.forEach((data) => {
@@ -75,6 +77,23 @@ const filterSlice = createSlice({
           });
         }
 
+        // range
+        if (filtertype === "price") {
+          const min = data.filterdata[0];
+          const max = data.filterdata[1];
+
+          newData.forEach((newdata) => {
+            if (newdata.price >= min && newdata.price <= max) {
+              // check if tmpData already got info
+              const found = tmpData2.some((el) => el.id === newdata.id);
+              if (!found) {
+                tmpData2.push(newdata);
+              }
+            }
+          });
+          console.log(tmpData2);
+        }
+
         // color
         if (filtertype === "color") {
           data.filterdata.forEach((datas) => {
@@ -82,9 +101,9 @@ const filterSlice = createSlice({
               newData.forEach((newdata) => {
                 if (newdata.color.includes(datas.type)) {
                   // check if tmpData already got info
-                  const found = tmpData2.some((el) => el.id === newdata.id);
+                  const found = tmpData3.some((el) => el.id === newdata.id);
                   if (!found) {
-                    tmpData2.push(newdata);
+                    tmpData3.push(newdata);
                   }
                 }
               });
@@ -98,9 +117,9 @@ const filterSlice = createSlice({
               newData.forEach((newdata) => {
                 if (newdata.types.includes(datas.type)) {
                   // check if tmpData already got info
-                  const found = tmpData3.some((el) => el.id === newdata.id);
+                  const found = tmpData4.some((el) => el.id === newdata.id);
                   if (!found) {
-                    tmpData3.push(newdata);
+                    tmpData4.push(newdata);
                   }
                 }
               });
@@ -109,17 +128,16 @@ const filterSlice = createSlice({
         }
       });
 
-      const tmpData4 = [...tmpData, ...tmpData2, ...tmpData3];
-      const tmpData5 = tmpData4.flat();
-      console.log(tmpData5);
+      const tmpData5 = [...tmpData, ...tmpData2, ...tmpData3, ...tmpData4];
+      const tmpData6 = tmpData5.flat();
 
-      if (tmpData5.length === 0) {
+      if (tmpData6.length === 0) {
         state.products = [];
         state.totalProducts = 0;
       } else {
         // get id
         const tmpId = [];
-        tmpData5.forEach((data) => {
+        tmpData6.forEach((data) => {
           tmpId.push(data.id);
         });
 
@@ -135,7 +153,6 @@ const filterSlice = createSlice({
         tmpId.forEach((i, index) => {
           countArray.push({ count: countValues[index], id: i });
         });
-        console.log(countArray);
 
         //sort number of occurrence
         const sortedCountData = countArray.sort(function (a, b) {
@@ -143,26 +160,63 @@ const filterSlice = createSlice({
           if (a.count > b.count) return -1;
           return 0;
         });
-        console.log(sortedCountData);
 
         // get id
         const finalData = [];
         const maxCount = sortedCountData[0].count;
-        console.log(maxCount);
+
         sortedCountData.forEach((i) => {
           if (maxCount === i.count) {
             newData.forEach((j) => {
               if (j.id === i.id) {
-                console.log("in");
                 finalData.push(j);
               }
             });
           }
         });
-        console.log(finalData);
 
-        state.products = [...finalData];
-        state.totalProducts = finalData.length;
+        // sort
+
+        if (sort === "default") {
+          state.products = [...finalData];
+          state.totalProducts = finalData.length;
+        }
+        if (sort === "desc") {
+          const sortedData = finalData.sort(function (a, b) {
+            if (a.title.toLowerCase() < b.title.toLowerCase()) return 1;
+            if (a.title.toLowerCase() > b.title.toLowerCase()) return -1;
+            return 0;
+          });
+          state.products = [...sortedData];
+          state.totalProducts = sortedData.length;
+        }
+        if (sort === "asc") {
+          const sortedData = finalData.sort(function (a, b) {
+            if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
+            if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;
+            return 0;
+          });
+          state.products = [...sortedData];
+          state.totalProducts = sortedData.length;
+        }
+        if (sort === "low to high") {
+          const sortedData = finalData.sort(function (a, b) {
+            if (a.price < b.price) return -1;
+            if (a.price > b.price) return 1;
+            return 0;
+          });
+          state.products = [...sortedData];
+          state.totalProducts = sortedData.length;
+        }
+        if (sort === "high to low") {
+          const sortedData = finalData.sort(function (a, b) {
+            if (a.price < b.price) return 1;
+            if (a.price > b.price) return -1;
+            return 0;
+          });
+          state.products = [...sortedData];
+          state.totalProducts = sortedData.length;
+        }
       }
     },
   },
