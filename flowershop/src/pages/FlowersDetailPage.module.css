@@ -1,0 +1,150 @@
+* {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.flexcontainer {
+  margin: 6rem;
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.flexcontainer2 {
+  padding: 1rem;
+  position: relative;
+}
+
+.imge {
+  height: 560px;
+  width: 605px;
+  margin: auto;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: underline;
+  white-space: nowrap;
+  margin-top: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.texttitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.textend {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 4rem;
+}
+
+.button {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-align: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96%;
+  height: 2.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #000000;
+
+  transition: all 0.5s ease;
+  cursor: pointer;
+  background: linear-gradient(to left, transparent 50%, #000000 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.button:hover,
+button:hover {
+  outline: 0;
+  color: white;
+  background-position: left bottom;
+}
+
+.button:active,
+button:active {
+  outline: 0;
+  color: white;
+}
+
+/*********************************** Sidebarbutton ************************************/
+@media (min-width: 500px) {
+  .flexcontainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .imge {
+    height: 360px;
+    width: 405px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 600px) {
+  .flexcontainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .imge {
+    height: 460px;
+    width: 505px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .flexcontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imge {
+    height: 560px;
+    width: 605px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flexcontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imge {
+    height: 560px;
+    width: 605px;
+    margin: auto;
+  }
+}

@@ -295,6 +295,8 @@ function FlowersPage(props) {
             title={product.title}
             price={product.price}
             src={product.image}
+            src_hvoer={product.image_hover}
+            data={product}
           />
         ))}
       </div>

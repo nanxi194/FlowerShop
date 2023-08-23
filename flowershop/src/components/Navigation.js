@@ -2,6 +2,7 @@ import { useState } from "react";
 import classes from "./Navigation.module.css";
 import { NavLink } from "react-router-dom";
 import { Cart } from "react-bootstrap-icons";
+import { useDispatch, useSelector } from "react-redux";
 
 function Navigation() {
   // adding the states
@@ -17,6 +18,9 @@ function Navigation() {
     setIsActive(false);
   };
 
+  const dispatch = useDispatch();
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
+
   return (
     <header className={classes.header}>
       <nav className={classes.navbar}>
@@ -30,7 +34,7 @@ function Navigation() {
         <ul className={`${classes.navMenu} ${isActive ? classes.active : ""}`}>
           <li onClick={removeActive}>
             <NavLink
-              to="/flowers"
+              to="/same-day-delivery"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
@@ -89,7 +93,7 @@ function Navigation() {
             <Cart size={24} />
           </li>
           <li>
-            <p>0</p>
+            <p>{cartQuantity}</p>
           </li>
         </ul>
       </nav>

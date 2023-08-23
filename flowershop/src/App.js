@@ -4,14 +4,21 @@ import HomePage from "./pages/HomePage";
 import RootLayout from "./pages/Root";
 import AddOnPage from "./pages/AddOnPage";
 import FlowersPage from "./pages/FlowersPage";
+import SameDayDelivery from "./pages/SameDayDelivery";
+import FlowersDetailPage from "./pages/FlowersDetailPage";
+
 import "./App.css";
 
 // IMAGE
 import p1 from "./assets/dicoverimg.jpg";
+import ph1 from "./assets/hover.jpg";
+import pd1 from "./assets/detail.jpg";
 
 const DUMMY_PRODUCTS = [
   {
     image: p1,
+    image_hover: ph1,
+    image_detail: pd1,
     id: "p1",
     price: 45.0,
     title: "Cool Blue",
@@ -28,6 +35,8 @@ const DUMMY_PRODUCTS = [
   },
   {
     image: p1,
+    image_hover: ph1,
+    image_detail: pd1,
     id: "p2",
     price: 119.9,
     title: "Madeleine",
@@ -44,6 +53,8 @@ const DUMMY_PRODUCTS = [
   },
   {
     image: p1,
+    image_hover: ph1,
+    image_detail: pd1,
     id: "p3",
     price: 159.9,
     title: "Amber Abundance",
@@ -61,6 +72,8 @@ const DUMMY_PRODUCTS = [
   },
   {
     image: p1,
+    image_hover: ph1,
+    image_detail: pd1,
     id: "p4",
     price: 329.9,
     title: "Opening Flower Stand",
@@ -77,6 +90,8 @@ const DUMMY_PRODUCTS = [
   },
   {
     image: p1,
+    image_hover: ph1,
+    image_detail: pd1,
     id: "p5",
     price: 87.9,
     title: "Romy",
@@ -106,6 +121,11 @@ const router = createBrowserRouter([
         path: "/flowers",
         element: <FlowersPage data={DUMMY_PRODUCTS} />,
       },
+      {
+        path: "/same-day-delivery",
+        element: <SameDayDelivery />,
+      },
+      { path: "/flowers/:flowersId", element: <FlowersDetailPage /> },
     ],
   },
 ]);
