@@ -3,6 +3,8 @@ import classes from "./Navigation.module.css";
 import { NavLink } from "react-router-dom";
 import { Cart } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
+import SideCart from "../components/SideCart";
+import { cart_actionActions } from "../store/cart_action-slice";
 
 function Navigation() {
   // adding the states
@@ -20,6 +22,10 @@ function Navigation() {
 
   const dispatch = useDispatch();
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
+
+  const openCartHandler = () => {
+    dispatch(cart_actionActions.toggle_cart());
+  };
 
   return (
     <header className={classes.header}>
@@ -90,7 +96,8 @@ function Navigation() {
             </div>
           </li>
           <li>
-            <Cart size={24} />
+            <Cart size={24} onClick={openCartHandler} />
+            <SideCart></SideCart>
           </li>
           <li>
             <p>{cartQuantity}</p>

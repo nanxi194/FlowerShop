@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../store/cart-slice";
+import { cart_actionActions } from "../store/cart_action-slice";
 
 function FlowersDetailPage(props) {
   const dispatch = useDispatch();
@@ -13,11 +14,15 @@ function FlowersDetailPage(props) {
   const addItemHandler = () => {
     dispatch(
       cartActions.addItemToCart({
-        id: _state,
+        id: _state.id,
         title: _state.title,
         price: _state.price,
       })
     );
+    setTimeout(() => {
+      dispatch(cart_actionActions.toggle_cart());
+    }, 500);
+    clearTimeout();
   };
 
   return (
@@ -31,7 +36,7 @@ function FlowersDetailPage(props) {
 
         <div className={classes.flexcontainer2}>
           <h1 className={classes.title}>{_state.title}</h1>
-          <p className={classes.price}>{_state.price} SGD</p>
+          <p className={classes.price}>${_state.price.toFixed(2)} SGD</p>
 
           <h2 className={classes.subtitle}>DESIGN NOTES</h2>
           <p className={classes.text}>{_state.description}</p>

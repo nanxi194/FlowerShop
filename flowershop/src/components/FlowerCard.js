@@ -12,6 +12,7 @@ function FlowerCard(props) {
         to={`/flowers/${data.id}`}
         state={data}
         style={{ textDecoration: "none" }}
+        className={classes.imge}
       >
         <div
           onMouseOver={() => setOpen(false)}
@@ -24,7 +25,7 @@ function FlowerCard(props) {
           />
         </div>
         <h1 className={classes.text}>{title}</h1>
-        <h2 className={classes.text}>${price}</h2>
+        <h2 className={classes.text}>${price.toFixed(2)}</h2>
       </Link>
     </>
   );

@@ -67,7 +67,7 @@
 }
 
 .button {
-  color: #000000;
+  color: white;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0;
@@ -81,12 +81,12 @@
   width: 96%;
   height: 2.5rem;
   cursor: pointer;
-  background-color: transparent;
+  background-color: #000000;
   border: 1px solid #000000;
 
-  transition: all 0.5s ease;
+  transition: all 0.7s ease;
   cursor: pointer;
-  background: linear-gradient(to left, transparent 50%, #000000 50%);
+  background: linear-gradient(to left, #000000 50%, white 50%);
   background-size: 200% 100%;
   background-position: right bottom;
 }
@@ -94,14 +94,14 @@
 .button:hover,
 button:hover {
   outline: 0;
-  color: white;
+  color: #000000;
   background-position: left bottom;
 }
 
 .button:active,
 button:active {
   outline: 0;
-  color: white;
+  color: #000000;
 }
 
 /*********************************** Sidebarbutton ************************************/

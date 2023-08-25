@@ -3,6 +3,7 @@
   width: 229px;
   margin-bottom: 0.5rem;
   cursor: pointer;
+  background-color: antiquewhite;
 }
 
 .text {
@@ -14,7 +15,7 @@
   line-height: normal;
   white-space: nowrap;
   margin-bottom: 0.5rem;
-  cursor: pointer;
+  text-align: center;
 }
 
 /*********************************** Sidebarbutton ************************************/
@@ -26,8 +27,8 @@
     grid-template-columns: repeat(1, 1fr);
   }
   .imge {
-    height: 270px;
-    width: 229px;
+    height: 300px;
+    width: 259px;
     margin-bottom: 0.5rem;
   }
 }
