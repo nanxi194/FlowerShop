@@ -1,11 +1,14 @@
-import React from "react";
-// import SideCart from "../components/SideCart";
+import { React } from "react";
+import FlowersPage from "./FlowersPage";
 
-function SameDayDelivery() {
+function SameDayDelivery(props) {
+  const flowerData = props.data.filter(
+    (item) => item.same_day_delivery === "same day delivery"
+  );
+
   return (
     <>
-      <h1>SameDayDelivery</h1>
-      {/* <SideCart></SideCart> */}
+      <FlowersPage data={flowerData} />
     </>
   );
 }

@@ -33,7 +33,7 @@ function CartItems(props) {
         <X onClick={deleteItemHandler} />
       </div>
       <div className={classes.item_img}>
-        <img src={p1}></img>
+        <img alt="cartimg" src={p1}></img>
       </div>
       <div className={classes.item_details}>
         <p>{title}</p>

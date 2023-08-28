@@ -2,10 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cart_actionSlice = createSlice({
   name: "cart_action",
-  initialState: { cartIsVisible: false },
+  initialState: { cartIsVisible: false, filterIsVisible: false },
   reducers: {
     toggle_cart(state) {
       state.cartIsVisible = !state.cartIsVisible;
+    },
+    toggle_filter(state) {
+      state.filterIsVisible = !state.filterIsVisible;
     },
   },
 });

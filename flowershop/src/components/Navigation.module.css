@@ -65,6 +65,7 @@ ul {
   list-style-type: none;
   display: flex;
   gap: 0.2rem;
+  cursor: pointer;
 }
 
 .listCart p {

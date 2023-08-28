@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../store/cart-slice";
 import { cart_actionActions } from "../store/cart_action-slice";
+import { Truck } from "react-bootstrap-icons";
 
 function FlowersDetailPage(props) {
   const dispatch = useDispatch();
@@ -46,7 +47,13 @@ function FlowersDetailPage(props) {
           <p className={classes.text}>Height: {_state.dimensions[1]}cm</p>
 
           <h3 className={classes.texttitle}>Blooms</h3>
-          <p className={classes.textend}>{_state.blooms}</p>
+          <p className={classes.text}>{_state.blooms}</p>
+
+          <div className={classes.delivery}>
+            <Truck size={20} className={classes.truck} />
+            <p className={classes.deliverytitle}>{_state.same_day_delivery}</p>
+          </div>
+
           <button className={classes.button} onClick={addItemHandler}>
             ADD TO CART
           </button>

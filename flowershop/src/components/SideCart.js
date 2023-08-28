@@ -1,9 +1,8 @@
 import React from "react";
-import { Cart, X } from "react-bootstrap-icons";
+import { X } from "react-bootstrap-icons";
 import classes from "./SideCart.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { cart_actionActions } from "../store/cart_action-slice";
-import { cartActions } from "../store/cart-slice";
 import CartItems from "./CartItems";
 
 function SideCart(props) {
