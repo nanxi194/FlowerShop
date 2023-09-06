@@ -40,7 +40,7 @@
   font-weight: 400;
   text-decoration: underline;
   white-space: nowrap;
-  margin-top: 4rem;
+  margin-top: 3rem;
   margin-bottom: 0.5rem;
 }
 
@@ -74,6 +74,13 @@
 }
 
 .truck {
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+}
+
+.circle {
+  margin-top: 0.2rem;
+  margin-left: 1rem;
   margin-right: 0.5rem;
 }
 

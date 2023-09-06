@@ -25,7 +25,7 @@ const DUMMY_PRODUCTS = [
     price: 45.0,
     title: "Cool Blue",
     color: ["Pink"],
-    avaliability: "In stock",
+    avaliability: "Out of stock",
     types: ["Tuilps"],
     dimensions: [23, 22],
     arrangements: "Flower Bouquets",
@@ -51,7 +51,7 @@ const DUMMY_PRODUCTS = [
     description:
       "For the woman that will always be your #1. Remind her of how extraordinary she is by surprising her with a bouquet that will make her heart flutter. This lush mix of fragrant pink lilies and lush white roses is destined to brighten someone's day!",
     blooms: "White Rose (17 Stalks), Pink Lily (5 Stalks)",
-    same_day_delivery: "same day delivery",
+    same_day_delivery: "Same day delivery",
   },
   {
     image: p1,
@@ -70,7 +70,7 @@ const DUMMY_PRODUCTS = [
       "A warm, golden symphony of precious petals, arranged together for the most marvelous of celebrations! ",
     blooms:
       "Orange Lily (3 stalks), Champagne Rose (10 stalks), Yellow Alstroemeria (5 stalks), Greentick (3 stalks), Eucalyptus Cinerea",
-    same_day_delivery: "same day delivery",
+    same_day_delivery: "Same day delivery",
   },
   {
     image: p1,
@@ -107,7 +107,7 @@ const DUMMY_PRODUCTS = [
       "All in lovely shades from white to pink, Romy is a crisp mix of fragrant roses, daisies, and alstroemerias.",
     blooms:
       "Shocking Pink Rose (12 Stalks), White Carnation Spray(5 Stalks), Purple Caspia",
-    same_day_delivery: "same day delivery",
+    same_day_delivery: "Same day delivery",
   },
 ];
 

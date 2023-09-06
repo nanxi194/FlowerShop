@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../store/cart-slice";
 import { cart_actionActions } from "../store/cart_action-slice";
 import { Truck } from "react-bootstrap-icons";
+import { CheckCircle } from "react-bootstrap-icons";
+import { XCircle } from "react-bootstrap-icons";
 
 function FlowersDetailPage(props) {
   const dispatch = useDispatch();
@@ -52,6 +54,13 @@ function FlowersDetailPage(props) {
           <div className={classes.delivery}>
             <Truck size={20} className={classes.truck} />
             <p className={classes.deliverytitle}>{_state.same_day_delivery}</p>
+
+            {_state.avaliability === "In stock" ? (
+              <CheckCircle size={18} className={classes.circle} />
+            ) : (
+              <XCircle size={18} className={classes.circle} />
+            )}
+            <p className={classes.deliverytitle}>{_state.avaliability}</p>
           </div>
 
           <button className={classes.button} onClick={addItemHandler}>
