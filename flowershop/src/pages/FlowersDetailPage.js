@@ -8,6 +8,7 @@ import { cart_actionActions } from "../store/cart_action-slice";
 import { Truck } from "react-bootstrap-icons";
 import { CheckCircle } from "react-bootstrap-icons";
 import { XCircle } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 
 function FlowersDetailPage(props) {
   const dispatch = useDispatch();
@@ -30,6 +31,19 @@ function FlowersDetailPage(props) {
 
   return (
     <>
+      <div className={classes.goback}>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          <h1>Home </h1>
+        </Link>
+        <p>• •</p>
+        <Link to={"/flowers"} style={{ textDecoration: "none" }}>
+          <h1>Flowers</h1>
+        </Link>
+
+        <p>• •</p>
+        <h1>{_state.title}</h1>
+      </div>
+
       <div className={classes.flexcontainer}>
         <img
           alt="productimg"

@@ -4,9 +4,34 @@
   letter-spacing: 0;
   line-height: normal;
 }
+.goback {
+  display: flex;
+  flex-direction: row;
+  margin-left: 6rem;
+  margin-top: 5rem;
+  margin-bottom: 0.8rem;
+  word-spacing: 0.4rem;
+}
+
+.goback h1 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 0.4rem;
+}
+
+.goback p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 0.4rem;
+  color: gray;
+}
 
 .flexcontainer {
-  margin: 6rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  margin-bottom: 6rem;
   display: grid;
   justify-content: center;
   gap: 2rem;
@@ -27,6 +52,7 @@
   font-size: 32px;
   font-weight: 700;
   line-height: normal;
+  word-spacing: 0.4rem;
 }
 
 .price {
