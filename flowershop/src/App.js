@@ -6,6 +6,8 @@ import AddOnPage from "./pages/AddOnPage";
 import AllFlowersPage from "./pages/AllFlowersPage";
 import SameDayDelivery from "./pages/SameDayDelivery";
 import FlowersDetailPage from "./pages/FlowersDetailPage";
+import CollectionDetailPage from "./pages/CollectionDetailPage";
+import AddOnDetailPage from "./pages/AddOnDetailPage";
 
 import "./App.css";
 
@@ -27,7 +29,7 @@ const DUMMY_PRODUCTS = [
     types: ["Tuilps"],
     dimensions: [23, 22],
     arrangements: "Flower Bouquets",
-    collection: "Birthday",
+    collection: "birthday",
     description:
       "This Get well soon basket will help to recover your loved ones in no time.",
     blooms: "Light Pink Tuilps (3 Stalks)",
@@ -45,7 +47,7 @@ const DUMMY_PRODUCTS = [
     types: ["Roses", "Lilies"],
     dimensions: [30, 25],
     arrangements: "Flower Bouquets",
-    collection: "Love",
+    collection: "love",
     description:
       "For the woman that will always be your #1. Remind her of how extraordinary she is by surprising her with a bouquet that will make her heart flutter. This lush mix of fragrant pink lilies and lush white roses is destined to brighten someone's day!",
     blooms: "White Rose (17 Stalks), Pink Lily (5 Stalks)",
@@ -63,7 +65,7 @@ const DUMMY_PRODUCTS = [
     types: ["Lilies", "Roses"],
     dimensions: [70, 50],
     arrangements: "Flower Bouquets",
-    collection: "Care",
+    collection: "care",
     description:
       "A warm, golden symphony of precious petals, arranged together for the most marvelous of celebrations! ",
     blooms:
@@ -82,7 +84,7 @@ const DUMMY_PRODUCTS = [
     types: ["Roses", "Sunflowers"],
     dimensions: [60, 170],
     arrangements: "Flower Stand",
-    collection: "Care",
+    collection: "care",
     description: "Best Of Luck Opening Flower Stand",
     blooms:
       "Shocking Pink Rose (10 Stalks), Sunflower (5 Stalks), Bird of Paradise (5 Stalks), Champagne Eustoma (5 Stalks), Red Gerbera (10 Stalks), Pink Hydrangea (1 Stalk), Green Ivy (2 Stalks), Pink Anthurium (3 Stalks), Monstera, Eucalyptus Leaves",
@@ -100,7 +102,7 @@ const DUMMY_PRODUCTS = [
     types: ["Roses"],
     dimensions: [38, 30],
     arrangements: "Flower Bouquets",
-    collection: "Weeding",
+    collection: "wedding",
     description:
       "All in lovely shades from white to pink, Romy is a crisp mix of fragrant roses, daisies, and alstroemerias.",
     blooms:
@@ -115,8 +117,12 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <HomePage /> }, //main page, default root
-      { path: "/collection", element: <CollectionPage /> },
+      {
+        path: "/collection",
+        element: <CollectionPage data={DUMMY_PRODUCTS} />,
+      },
       { path: "/add-on", element: <AddOnPage /> },
+
       {
         path: "/flowers",
         element: <AllFlowersPage data={DUMMY_PRODUCTS} />,
@@ -126,6 +132,11 @@ const router = createBrowserRouter([
         element: <SameDayDelivery data={DUMMY_PRODUCTS} />,
       },
       { path: "/flowers/:flowersId", element: <FlowersDetailPage /> },
+      {
+        path: "/collection/:collectionTitle",
+        element: <CollectionDetailPage />,
+      },
+      { path: "/add-on/:addonId", element: <AddOnDetailPage /> },
     ],
   },
 ]);

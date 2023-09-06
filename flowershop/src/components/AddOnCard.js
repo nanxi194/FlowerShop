@@ -1,11 +1,11 @@
 import { React, useState } from "react";
-import classes from "./FlowerCard.module.css";
+import classes from "./AddOnCard.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../store/cart-slice";
 import { cart_actionActions } from "../store/cart_action-slice";
 
-function FlowerCard(props) {
+function AddOnCard(props) {
   const { data, title, price, src, src_hvoer } = props;
   const [open, setOpen] = useState(true);
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ function FlowerCard(props) {
           className={classes.container}
         >
           <Link
-            to={`/flowers/${data.id}`}
+            to={`/add-on/${data.id}`}
             state={data}
             style={{ textDecoration: "none" }}
           >
@@ -48,7 +48,7 @@ function FlowerCard(props) {
           </p>
         </div>
         <Link
-          to={`/flowers/${data.id}`}
+          to={`/add-on/${data.id}`}
           state={data}
           style={{ textDecoration: "none" }}
         >
@@ -60,4 +60,4 @@ function FlowerCard(props) {
   );
 }
 
-export default FlowerCard;
+export default AddOnCard;
