@@ -10,7 +10,7 @@ function HomePage(props) {
     <>
       <img alt="Julia janeta" src={homeimg} className={classes.imgbox} />
       <NewArrival data={props.data}></NewArrival>
-      <Discover></Discover>
+      <Discover data={props.data}></Discover>
       <Footer></Footer>
     </>
   );
