@@ -49,6 +49,7 @@
   font-weight: 400;
   padding-top: 4rem;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 /*********************************** Responsive ************************************/

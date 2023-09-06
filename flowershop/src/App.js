@@ -116,7 +116,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      { index: true, element: <HomePage /> }, //main page, default root
+      { index: true, element: <HomePage data={DUMMY_PRODUCTS} /> }, //main page, default root
       {
         path: "/collection",
         element: <CollectionPage data={DUMMY_PRODUCTS} />,

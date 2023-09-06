@@ -5,11 +5,11 @@ import NewArrival from "../components/NewArrival";
 import Discover from "../components/Discover";
 import Footer from "../components/Footer";
 
-function HomePage() {
+function HomePage(props) {
   return (
     <>
       <img alt="Julia janeta" src={homeimg} className={classes.imgbox} />
-      <NewArrival></NewArrival>
+      <NewArrival data={props.data}></NewArrival>
       <Discover></Discover>
       <Footer></Footer>
     </>
