@@ -8,6 +8,8 @@ import SameDayDelivery from "./pages/SameDayDelivery";
 import FlowersDetailPage from "./pages/FlowersDetailPage";
 import CollectionDetailPage from "./pages/CollectionDetailPage";
 import AddOnDetailPage from "./pages/AddOnDetailPage";
+import CheckOutPage from "./pages/CheckOutPage";
+import ViewCartPage from "./pages/ViewCartPage";
 
 import "./App.css";
 
@@ -130,6 +132,14 @@ const router = createBrowserRouter([
       {
         path: "/same-day-delivery",
         element: <SameDayDelivery data={DUMMY_PRODUCTS} />,
+      },
+      {
+        path: "/information",
+        element: <CheckOutPage />,
+      },
+      {
+        path: "/view-cart",
+        element: <ViewCartPage />,
       },
       { path: "/flowers/:flowersId", element: <FlowersDetailPage /> },
       {

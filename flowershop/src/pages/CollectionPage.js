@@ -12,21 +12,20 @@ function CollectionPage(props) {
     <>
       <div className={classes.cards}>
         {collectionTitle.map((title, index) => (
-          <Link
-            key={title}
-            to={`/collection/${title}`}
-            state={props.data.filter((item) => item.collection === title)}
-            style={{ textDecoration: "none" }}
-          >
-            <div>
+          <div key={title} className={classes.imge}>
+            <Link
+              to={`/collection/${title}`}
+              state={props.data.filter((item) => item.collection === title)}
+              style={{ textDecoration: "none" }}
+            >
               <img
                 alt="productimg"
                 src={collectionImage[index]}
                 className={classes.imge}
               />
-              <h1 className={classes.text}>{title}</h1>
-            </div>
-          </Link>
+              <p className={classes.text}>{title}</p>
+            </Link>
+          </div>
         ))}
       </div>
       <Footer />

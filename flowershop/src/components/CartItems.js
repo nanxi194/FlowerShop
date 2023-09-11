@@ -28,23 +28,23 @@ function CartItems(props) {
   };
 
   return (
-    <div className={classes.cart_item}>
-      <div className={classes.remove_item}>
-        <X onClick={deleteItemHandler} />
-      </div>
-      <div className={classes.item_img}>
-        <img alt="cartimg" src={p1}></img>
-      </div>
-      <div className={classes.item_details}>
-        <p>{title}</p>
-        <p>${total.toFixed(2)} SGD</p>
-        <div className={classes.qty}>
-          <span onClick={removeItemHandler}>-</span>
-          <p>{quantity}</p>
-          <span onClick={addItemHandler}>+</span>
+    <>
+      <div className={classes.cart_item}>
+        <div className={classes.item_img}>
+          <img alt="cartimg" src={p1}></img>
+        </div>
+        <div className={classes.item_details}>
+          <p>{title}</p>
+          <p>${total.toFixed(2)} SGD</p>
+          <div className={classes.qty}>
+            <span onClick={removeItemHandler}>-</span>
+            <p>{quantity}</p>
+            <span onClick={addItemHandler}>+</span>
+          </div>
+          <h1 onClick={deleteItemHandler}>Remove</h1>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

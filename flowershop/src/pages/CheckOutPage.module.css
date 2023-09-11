@@ -1,0 +1,150 @@
+.cards {
+  margin-left: 10rem;
+  margin-right: 10rem;
+  display: grid;
+  gap: 8rem;
+}
+
+/* section one */
+.section_one {
+  padding: 1rem;
+}
+
+.goback {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  word-spacing: 0.4rem;
+}
+
+.goback h1 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 0.4rem;
+  color: #cf714a;
+}
+
+.goback p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 0.4rem;
+  color: gray;
+}
+
+.goback h2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 0.4rem;
+}
+
+/* section two */
+.section_two {
+  padding: 1rem;
+}
+
+.itemcontainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.imge {
+  height: 150px;
+  width: 109px;
+  cursor: pointer;
+  background-color: antiquewhite;
+}
+
+.productcontainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.productcontainer p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 4rem;
+}
+
+.itemcontainer h1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 2rem;
+}
+
+.itemcontainer h2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 2rem;
+  margin-left: auto;
+}
+
+.itemcontainer h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 2rem;
+  margin-left: auto;
+}
+
+.itemcontainer h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 2rem;
+}
+
+.filter__dropdown__actions {
+  border-top-width: 1px;
+  border-top-color: #d9d9d9;
+  border-top-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+/*********************************** responsive ************************************/
+
+/* Responsive */
+
+@media (min-width: 500px) {
+  .cards {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .cards {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
+@media (min-width: 900px) {
+  .cards {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
+  }
+}

@@ -1,13 +1,17 @@
 import { Outlet } from "react-router-dom";
-// import MainNavigation from "../components/MainNavigation";
 import Navigation from "../components/Navigation";
 import ScrollToTop from "../ScrollToTop";
+import { useSelector } from "react-redux";
 
 function RootLayout() {
+  const showNavigation = useSelector(
+    (state) => state.navigation_action.navigationIsVisible
+  );
+
   return (
     <>
       <ScrollToTop />
-      <Navigation />
+      {showNavigation ? <Navigation /> : ""}
       <main>
         <Outlet />
       </main>

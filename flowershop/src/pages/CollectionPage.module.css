@@ -1,9 +1,9 @@
 .cards {
-  margin-top: 6rem;
+  margin-top: 8rem;
   margin-left: 8rem;
   margin-right: 8rem;
   display: grid;
-  gap: 4.5rem;
+  gap: 8rem;
   justify-content: center;
   align-items: center;
 }

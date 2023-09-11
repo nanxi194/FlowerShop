@@ -1,0 +1,72 @@
+.title {
+  margin-left: 30rem;
+  margin-right: 30rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  color: #000000;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.cart_items {
+  margin-left: 30rem;
+  margin-right: 30rem;
+}
+
+.itemcontainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.itemcontainer h1 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.itemcontainer h2 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: auto;
+}
+
+.subtotal_btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-align: center;
+
+  height: 2.5rem;
+  width: 100%;
+  cursor: pointer;
+  background-color: #000000;
+  border: 1px solid #000000;
+
+  transition: all 0.7s ease;
+  cursor: pointer;
+  background: linear-gradient(to left, #000000 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.subtotal_btn:hover,
+button:hover {
+  outline: 0;
+  color: #000000;
+  background-position: left bottom;
+}
+
+.subtotal_btn:active,
+button:active {
+  outline: 0;
+  color: #000000;
+}

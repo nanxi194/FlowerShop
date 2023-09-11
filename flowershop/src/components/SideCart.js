@@ -3,13 +3,20 @@ import { X } from "react-bootstrap-icons";
 import classes from "./SideCart.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { cart_actionActions } from "../store/cart_action-slice";
+import { navigationActions } from "../store/navigation-slice";
 import CartItems from "./CartItems";
+import { Link } from "react-router-dom";
 
 function SideCart(props) {
   const dispatch = useDispatch();
   const isOpenCart = useSelector((state) => state.cart_action.cartIsVisible);
 
   const openCartHandler = () => {
+    dispatch(cart_actionActions.toggle_cart());
+  };
+
+  const handleButton = () => {
+    dispatch(navigationActions.toggle_navigation(false));
     dispatch(cart_actionActions.toggle_cart());
   };
 
@@ -29,18 +36,20 @@ function SideCart(props) {
             <X className={classes.close_btn} onClick={openCartHandler} />
           </div>
           <div className={classes.cart_items}>
-            {cartItems.map((item) => (
-              <CartItems
-                key={item.id}
-                item={{
-                  id: item.id,
-                  title: item.name,
-                  quantity: item.quantity,
-                  total: item.totalPrice,
-                  price: item.price,
-                }}
-              />
-            ))}
+            {cartItems.length !== 0
+              ? cartItems.map((item) => (
+                  <CartItems
+                    key={item.id}
+                    item={{
+                      id: item.id,
+                      title: item.name,
+                      quantity: item.quantity,
+                      total: item.totalPrice,
+                      price: item.price,
+                    }}
+                  />
+                ))
+              : ""}
           </div>
           <div className={classes.cart_actions}>
             <div className={classes.subtotal}>
@@ -49,7 +58,16 @@ function SideCart(props) {
                 $<span>{cartSubtotal.toFixed(2)}</span>
               </p>
             </div>
-            <button className={classes.subtotal_btn}>CHECK OUT</button>
+
+            <Link
+              key={"checkout"}
+              to={"/information"}
+              style={{ textDecoration: "none" }}
+            >
+              <button onClick={handleButton} className={classes.subtotal_btn}>
+                CHECK OUT
+              </button>
+            </Link>
           </div>
         </div>
       </div>
