@@ -5,6 +5,7 @@ import homeimg2 from "../assets/homeimg2.jpg";
 
 function NewArrival(props) {
   const data = props.data[1];
+
   return (
     <>
       <div className={classes.flexcontainer}>

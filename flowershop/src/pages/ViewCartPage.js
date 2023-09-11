@@ -15,49 +15,43 @@ function ViewCartPage() {
   };
 
   return (
-    <>
+    <div className={classes.cart_items}>
       <h1 className={classes.title}>Cart</h1>
-      <div className={classes.cart_items}>
-        {cartItems.length !== 0
-          ? cartItems.map((item) => (
-              <CartItems
-                key={item.id}
-                item={{
-                  id: item.id,
-                  title: item.name,
-                  quantity: item.quantity,
-                  total: item.totalPrice,
-                  price: item.price,
-                  type: "view cart",
-                }}
-              />
-            ))
-          : ""}
+      {cartItems.length !== 0
+        ? cartItems.map((item) => (
+            <CartItems
+              key={item.id}
+              item={{
+                id: item.id,
+                title: item.name,
+                quantity: item.quantity,
+                total: item.totalPrice,
+                price: item.price,
+                type: "view cart",
+              }}
+            />
+          ))
+        : ""}
 
-        <div className={classes.itemcontainer}>
-          <h1>Subtotal </h1>
-          <h2>${cartSubtotal.toFixed(2)} SGD</h2>
-        </div>
-
-        <Link
-          key={"flowers"}
-          to={"/flowers"}
-          style={{ textDecoration: "none" }}
-        >
-          <button className={classes.subtotal_btn}>CONTINUE SHOPPING</button>
-        </Link>
-
-        <Link
-          key={"checkout"}
-          to={"/information"}
-          style={{ textDecoration: "none" }}
-        >
-          <button onClick={handleButton} className={classes.subtotal_btn}>
-            CHECK OUT
-          </button>
-        </Link>
+      <div className={classes.itemcontainer}>
+        <h1>Subtotal </h1>
+        <h2>${cartSubtotal.toFixed(2)} SGD</h2>
       </div>
-    </>
+
+      <Link key={"flowers"} to={"/flowers"} style={{ textDecoration: "none" }}>
+        <button className={classes.subtotal_btn}>CONTINUE SHOPPING</button>
+      </Link>
+
+      <Link
+        key={"checkout"}
+        to={"/information"}
+        style={{ textDecoration: "none" }}
+      >
+        <button onClick={handleButton} className={classes.subtotal_btn}>
+          CHECK OUT
+        </button>
+      </Link>
+    </div>
   );
 }
 
