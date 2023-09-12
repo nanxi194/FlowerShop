@@ -13,7 +13,7 @@ ul {
   left: 0;
   top: 0;
   margin: auto;
-  background-color: aliceblue;
+  background-color: white;
   position: sticky;
   z-index: 1;
 }
@@ -52,11 +52,11 @@ ul {
 }
 
 .navMenu a:hover {
-  color: #ff6868;
+  color: #ab251a;
 }
 
 .navMenu a.active {
-  color: #ff6868;
+  color: #ab251a;
 }
 
 /* cart */

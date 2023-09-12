@@ -17,11 +17,11 @@ app.use(express.json());
 const DUMMY_PRODUCTS = [
   {
     image:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMjIvMzQvYjQzMzYzODItMjM1YS00MmQ4LWE3ZTMtZDQ1MjEzMjk5ZDE0L01PTTIyX092ZXJUaGVSYWluYm93X0RMX0hIXzA4NC5qcGciXV0/MOM22_OverTheRainbow_DL_HH_084.jpg?sha=9f52df27b6e20c22",
+      "https://bouqs.com/product_images/hot-pink-lilies-roses-ranunculus/Deluxe/5ef29e9d69fef500825fc0f3/detail.jpg?c=1592958621",
     image_hover:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://bouqs.com/product_images/hot-pink-lilies-roses-ranunculus/Deluxe/5ef29ea769fef5009e5fe2fa/detail.jpg?c=1592958631",
     image_detail:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://bouqs.com/product_images/hot-pink-lilies-roses-ranunculus/Deluxe/5ef29e934edf53008b083efb/detail.jpg?c=1592958611",
     id: "p1",
     price: 45.0,
     title: "Cool Blue",
@@ -38,11 +38,11 @@ const DUMMY_PRODUCTS = [
   },
   {
     image:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMjIvMzQvYjQzMzYzODItMjM1YS00MmQ4LWE3ZTMtZDQ1MjEzMjk5ZDE0L01PTTIyX092ZXJUaGVSYWluYm93X0RMX0hIXzA4NC5qcGciXV0/MOM22_OverTheRainbow_DL_HH_084.jpg?sha=9f52df27b6e20c22",
+      "https://bouqs.com/product_images/pink-peach-garden-roses/Deluxe/64efad54996be4009eb18d72/detail.jpg?c=1693429076",
     image_hover:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://bouqs.com/product_images/pink-peach-garden-roses/Deluxe/64efad318da85f008afe68c9/detail.jpg?c=1693429041",
     image_detail:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://bouqs.com/product_images/pink-peach-garden-roses/Deluxe/64efad318da85f008afe68c9/detail.jpg?c=1693429041",
     id: "p2",
     price: 119.9,
     title: "Madeleine",
@@ -59,11 +59,11 @@ const DUMMY_PRODUCTS = [
   },
   {
     image:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMjIvMzQvYjQzMzYzODItMjM1YS00MmQ4LWE3ZTMtZDQ1MjEzMjk5ZDE0L01PTTIyX092ZXJUaGVSYWluYm93X0RMX0hIXzA4NC5qcGciXV0/MOM22_OverTheRainbow_DL_HH_084.jpg?sha=9f52df27b6e20c22",
+      "https://bouqs.com/product_images/sunflower-peach-carnations-roses/Deluxe/630ff1dacb262c008f3e78af/detail.jpg?c=1661989338",
     image_hover:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://bouqs.com/product_images/sunflower-peach-carnations-roses/Deluxe/630ff1cd79a294009625475d/detail.jpg?c=1661989325",
     image_detail:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://bouqs.com/product_images/sunflower-peach-carnations-roses/Deluxe/630ff1cd79a294009625475d/detail.jpg?c=1661989325",
     id: "p3",
     price: 159.9,
     title: "Amber Abundance",
@@ -102,11 +102,11 @@ const DUMMY_PRODUCTS = [
   },
   {
     image:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMjIvMzQvYjQzMzYzODItMjM1YS00MmQ4LWE3ZTMtZDQ1MjEzMjk5ZDE0L01PTTIyX092ZXJUaGVSYWluYm93X0RMX0hIXzA4NC5qcGciXV0/MOM22_OverTheRainbow_DL_HH_084.jpg?sha=9f52df27b6e20c22",
+      "https://bouqs.com/product_images/peach-yellow-roses-carnations-alstroemeria/Deluxe/5e62fc7f18294c008d6c6130/detail.jpg?c=1583545471",
     image_hover:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://bouqs.com/product_images/peach-yellow-roses-carnations-alstroemeria/Deluxe/5e62fc89cee3f101f5fbedee/detail.jpg?c=1583545481",
     image_detail:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://bouqs.com/product_images/peach-yellow-roses-carnations-alstroemeria/Deluxe/5e62fc6a18294c008d6c600c/detail.jpg?c=1583545450",
     id: "p5",
     price: 87.9,
     title: "Romy",
@@ -126,12 +126,9 @@ const DUMMY_PRODUCTS = [
 
 const DUMMY_ADDONS = [
   {
-    image:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMjIvMzQvYjQzMzYzODItMjM1YS00MmQ4LWE3ZTMtZDQ1MjEzMjk5ZDE0L01PTTIyX092ZXJUaGVSYWluYm93X0RMX0hIXzA4NC5qcGciXV0/MOM22_OverTheRainbow_DL_HH_084.jpg?sha=9f52df27b6e20c22",
-    image_hover:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
-    image_detail:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+    image: "https://bearloonsg.com/wp-content/uploads/2021/01/10-3.jpg",
+    image_hover: "https://bearloonsg.com/wp-content/uploads/2021/01/25.jpg",
+    image_detail: "https://bearloonsg.com/wp-content/uploads/2021/01/25.jpg",
 
     id: "a1",
     price: 20.0,
@@ -143,11 +140,11 @@ const DUMMY_ADDONS = [
   },
   {
     image:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMjIvMzQvYjQzMzYzODItMjM1YS00MmQ4LWE3ZTMtZDQ1MjEzMjk5ZDE0L01PTTIyX092ZXJUaGVSYWluYm93X0RMX0hIXzA4NC5qcGciXV0/MOM22_OverTheRainbow_DL_HH_084.jpg?sha=9f52df27b6e20c22",
+      "https://www.bigbasket.com/media/uploads/p/l/40257008_1-cherishxcom-star-shape-foil-balloons-decoration-items-for-birthday-kids-girls-wife-golden-silver.jpg",
     image_hover:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://www.partywholesale.com.sg/images/watermarked/1/detailed/9/Gold-Number-Confetti-Helium-Balloon-Delivery-Singapore.jpg",
     image_detail:
-      "https://bouqs.com/media/W1siZiIsIjIwMjMvMDkvMDcvMTYvMTIvMTEvYmEzOTEyNDMtMzlhYi00ZmQwLTg3NDUtYjdiM2MxZWU0NTFjL0VWR19BbGxUaGVSYWdlX0RMX01hc29uXzA4MV9XZWIuanBnIl1d/EVG_AllTheRage_DL_Mason_081_Web.jpg?sha=fdf0d8aa2249a6ae",
+      "https://www.partywholesale.com.sg/images/watermarked/1/detailed/9/Gold-Number-Confetti-Helium-Balloon-Delivery-Singapore.jpg",
 
     id: "a2",
     price: 12.0,

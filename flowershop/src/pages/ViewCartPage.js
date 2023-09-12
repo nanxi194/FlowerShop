@@ -27,7 +27,7 @@ function ViewCartPage() {
                 quantity: item.quantity,
                 total: item.totalPrice,
                 price: item.price,
-                type: "view cart",
+                src: item.src,
               }}
             />
           ))

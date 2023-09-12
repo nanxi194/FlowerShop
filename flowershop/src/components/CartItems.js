@@ -1,13 +1,11 @@
 import React from "react";
-import { X } from "react-bootstrap-icons";
 import classes from "./CartItems.module.css";
-import p1 from "../assets/dicoverimg.jpg";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../store/cart-slice";
 
 function CartItems(props) {
   const dispatch = useDispatch();
-  const { title, quantity, total, price, id } = props.item;
+  const { title, quantity, total, price, id, src } = props.item;
 
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
@@ -19,6 +17,7 @@ function CartItems(props) {
         id,
         title,
         price,
+        src,
       })
     );
   };
@@ -31,7 +30,7 @@ function CartItems(props) {
     <>
       <div className={classes.cart_item}>
         <div className={classes.item_img}>
-          <img alt="cartimg" src={p1}></img>
+          <img alt="cartimg" src={src}></img>
         </div>
         <div className={classes.item_details}>
           <p>{title}</p>

@@ -29,7 +29,11 @@ function CheckOutPage() {
           {cartItems.length !== 0
             ? cartItems.map((item) => (
                 <div className={classes.productcontainer} key={item.id}>
-                  <imge alt="productimg" className={classes.imge}></imge>
+                  <img
+                    alt="productimg"
+                    src={item.src}
+                    className={classes.imge}
+                  ></img>
                   <p>{item.name}</p>
                   <p>${item.totalPrice.toFixed(2)}</p>
                   <p>Quantity: {item.quantity}</p>

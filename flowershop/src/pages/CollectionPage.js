@@ -3,14 +3,20 @@ import Footer from "../components/Footer";
 import classes from "./CollectionPage.module.css";
 import { Link, useLoaderData } from "react-router-dom";
 
-import pd1 from "../assets/detail.jpg";
-
 function CollectionPage() {
   const loader = useLoaderData();
   const data = loader.message;
+  const pd1 =
+    "https://bouqs.com/product_images/pink-roses-oriental-lilies-vase/Original/64f0daa591c06100856de742/detail.jpg?c=1693506213";
+  const pd4 =
+    "https://bouqs.com/product_images/pink-peach-garden-roses/Deluxe/64efad318da85f008afe68c9/detail.jpg?c=1693429041";
+  const pd2 =
+    "https://bouqs.com/product_images/sunflower-peach-carnations-roses/Deluxe/630ff1cd79a294009625475d/detail.jpg?c=1661989325";
+  const pd3 =
+    "https://bouqs.com/product_images/ivory-roses-blue-hydrangea/Deluxe/62e30dad034bb10098e4682f/detail.jpg?c=1659047341";
 
   const collectionTitle = ["love", "care", "birthday", "wedding"];
-  const collectionImage = [pd1, pd1, pd1, pd1];
+  const collectionImage = [pd1, pd2, pd3, pd4];
   return (
     <>
       <div className={classes.cards}>

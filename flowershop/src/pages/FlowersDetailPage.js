@@ -21,6 +21,7 @@ function FlowersDetailPage(props) {
         id: _state.id,
         title: _state.title,
         price: _state.price,
+        src: _state.image,
       })
     );
     setTimeout(() => {
