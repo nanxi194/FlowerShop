@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import classes from "./CheckOutPage.module.css";
 import SubmitForm from "../components/SubmitForm";
 import { Link } from "react-router-dom";
+import PlaceComponent from "../components/PlaceComponent";
 
 function CheckOutPage() {
   const cartSubtotal = useSelector((state) => state.cart.subtotal);

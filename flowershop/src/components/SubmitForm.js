@@ -71,14 +71,15 @@ function SubmitForm() {
     <>
       <form>
         <h1 class={classes.title}>Contact</h1>
-        <div>
+        <div className={classes.field}>
           <input
-            placeholder="Email"
-            id="email"
             type="text"
+            id="email"
             onChange={handleEmailChange}
             value={email}
+            placeholder="if empty will not work"
           />
+          <label>Email</label>
         </div>
         {error && <h2 className={classes.error}>{error}</h2>}
         <h1 className={classes.title}>Delivery method</h1>
@@ -143,25 +144,49 @@ function SubmitForm() {
               styles={customStyles}
             />
 
-            <div>
-              <input placeholder="Last name" id="Last name" type="text" />
-              <input placeholder="First name" id="First name" type="text" />
-            </div>
-            <div>
-              <input placeholder="Address" id="Address" type="text" />
-            </div>
-            <div>
+            <div className={classes.field}>
               <input
-                placeholder="Apartment,suite,etc.(optional)"
-                id="Apartment"
                 type="text"
+                id="Last name"
+                placeholder="if empty will not work"
               />
+              <label>Last name</label>
             </div>
-            <div>
-              <input placeholder="Postal code" id="Postal code" type="text" />
+            <div className={classes.field}>
+              <input
+                type="text"
+                id="First name"
+                placeholder="if empty will not work"
+              />
+              <label>First name</label>
             </div>
-            <div>
+
+            <div className={classes.field}>
+              <input
+                type="text"
+                id="Address"
+                placeholder="if empty will not work"
+              />
+              <label>Address</label>
+            </div>
+
+            <div className={classes.field}>
+              <input
+                type="text"
+                id="Apartment"
+                placeholder="Apartment,suite,etc.(optional)"
+              />
+              <label>Apartment,suite,etc.(optional)</label>
+            </div>
+
+            <div className={classes.field}>
+              <input type="text" id="Postal code" placeholder="Postal code" />
+              <label>Postal code</label>
+            </div>
+
+            <div className={classes.field}>
               <input placeholder="Phone" id="Phone" type="text" />
+              <label>Phone</label>
             </div>
           </>
         )}
