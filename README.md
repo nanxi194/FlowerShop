@@ -1,4 +1,4 @@
-# FlowerShop
+# FlowerShop ecommerce website
 #### Frontend: React JS, Redux
 #### Backend: Node JS
 
