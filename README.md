@@ -1,6 +1,6 @@
 # FlowerShop
-Frontend: React JS, Redux.\
-Backend: Node JS
+#### Frontend: React JS, Redux
+#### Backend: Node JS
 
 ### Functionalities
 1. Lazy Loading
