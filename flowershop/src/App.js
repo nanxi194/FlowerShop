@@ -1,11 +1,11 @@
-import React from "react";
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CollectionPage from "./pages/CollectionPage";
 import HomePage, { loader as dataLoader } from "./pages/HomePage";
 import RootLayout from "./pages/Root";
-import AddOnPage, { loader as addOnLoader } from "./pages/AddOnPage";
-import AllFlowersPage from "./pages/AllFlowersPage";
-import SameDayDelivery from "./pages/SameDayDelivery";
+// import AddOnPage, { loader as addOnLoader } from "./pages/AddOnPage";
+// import AllFlowersPage from "./pages/AllFlowersPage";
+// import SameDayDelivery from "./pages/SameDayDelivery";
 import FlowersDetailPage from "./pages/FlowersDetailPage";
 import CollectionDetailPage from "./pages/CollectionDetailPage";
 import AddOnDetailPage from "./pages/AddOnDetailPage";
@@ -13,6 +13,10 @@ import CheckOutPage from "./pages/CheckOutPage";
 import ViewCartPage from "./pages/ViewCartPage";
 
 import "./App.css";
+
+const AddOnPage = lazy(() => import("./pages/AddOnPage"));
+const AllFlowersPage = lazy(() => import("./pages/AllFlowersPage"));
+const SameDayDelivery = lazy(() => import("./pages/SameDayDelivery"));
 
 function App() {
   const router = createBrowserRouter([
@@ -26,17 +30,36 @@ function App() {
           element: <CollectionPage />,
           loader: dataLoader,
         },
-        { path: "/add-on", element: <AddOnPage />, loader: addOnLoader },
+        {
+          path: "/add-on",
+          element: (
+            <Suspense fallback={<p>Loading...</p>}>
+              <AddOnPage />
+            </Suspense>
+          ),
+          loader: () =>
+            import("./pages/AddOnPage").then((module) => module.loader()),
+        },
 
         {
           path: "/flowers",
-          element: <AllFlowersPage />,
-          loader: dataLoader,
+          element: (
+            <Suspense fallback={<p>Loading...</p>}>
+              <AllFlowersPage />
+            </Suspense>
+          ),
+          loader: () =>
+            import("./pages/HomePage").then((module) => module.loader()),
         },
         {
           path: "/same-day-delivery",
-          element: <SameDayDelivery />,
-          loader: dataLoader,
+          element: (
+            <Suspense fallback={<p>Loading...</p>}>
+              <SameDayDelivery />
+            </Suspense>
+          ),
+          loader: () =>
+            import("./pages/HomePage").then((module) => module.loader()),
         },
         {
           path: "/information",
