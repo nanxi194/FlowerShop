@@ -85,6 +85,11 @@ button:active {
   width: 10rem;
 }
 
+.popup button:hover {
+  background-color: #000000;
+  color: white;
+}
+
 /*********************************** responsive ************************************/
 
 @media (min-width: 500px) {

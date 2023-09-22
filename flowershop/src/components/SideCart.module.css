@@ -162,3 +162,8 @@ button:active {
   margin-right: 1rem;
   width: 10rem;
 }
+
+.popup button:hover {
+  background-color: #000000;
+  color: white;
+}
