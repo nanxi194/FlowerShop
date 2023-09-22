@@ -141,21 +141,23 @@ input[type="text"]:focus {
 }
 
 .submit {
+  margin-left: auto;
+}
+
+.submit button {
   background-color: #cf714a;
   border: none;
   text-align: center;
   cursor: pointer;
   border-radius: 5px;
-
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
-  margin-left: auto;
   color: white;
   padding: 1.4rem;
 }
 
-.submit:hover {
+.submit button:hover {
   background-color: #9f4c2a;
   color: white;
 }

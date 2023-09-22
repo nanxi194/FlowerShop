@@ -11,6 +11,7 @@ import CollectionDetailPage from "./pages/CollectionDetailPage";
 import AddOnDetailPage from "./pages/AddOnDetailPage";
 import CheckOutPage from "./pages/CheckOutPage";
 import ViewCartPage from "./pages/ViewCartPage";
+import Successful from "./pages/Successful";
 
 import "./App.css";
 
@@ -65,6 +66,7 @@ function App() {
           path: "/information",
           element: <CheckOutPage />,
         },
+        { path: "/submitted", element: <Successful /> },
         {
           path: "/view-cart",
           element: <ViewCartPage />,

@@ -9,11 +9,13 @@ import { Truck } from "react-bootstrap-icons";
 import { CheckCircle } from "react-bootstrap-icons";
 import { XCircle } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
+import { navigationActions } from "../store/navigation-slice";
 
 function FlowersDetailPage(props) {
   const dispatch = useDispatch();
   const location = useLocation();
   const _state = location.state;
+  dispatch(navigationActions.toggle_navigation(true));
 
   const addItemHandler = () => {
     dispatch(
@@ -22,6 +24,7 @@ function FlowersDetailPage(props) {
         title: _state.title,
         price: _state.price,
         src: _state.image,
+        message: "",
       })
     );
     setTimeout(() => {

@@ -7,11 +7,13 @@ import { cartActions } from "../store/cart-slice";
 import { cart_actionActions } from "../store/cart_action-slice";
 import { CheckCircle, XCircle, Truck } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
+import { navigationActions } from "../store/navigation-slice";
 
 function AddOnDetailPage(props) {
   const dispatch = useDispatch();
   const location = useLocation();
   const _state = location.state;
+  dispatch(navigationActions.toggle_navigation(true));
 
   const addItemHandler = () => {
     dispatch(

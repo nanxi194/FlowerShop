@@ -1,11 +1,12 @@
-import React from "react";
+import { React } from "react";
 import classes from "./CartItems.module.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../store/cart-slice";
+import { Gift } from "react-bootstrap-icons";
 
 function CartItems(props) {
   const dispatch = useDispatch();
-  const { title, quantity, total, price, id, src } = props.item;
+  const { title, quantity, total, price, id, src, message } = props.item;
 
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
@@ -18,12 +19,19 @@ function CartItems(props) {
         title,
         price,
         src,
+        message,
       })
     );
   };
 
   const deleteItemHandler = () => {
     dispatch(cartActions.deleteItemFromCart(id));
+  };
+
+  const messageHandler = () => {
+    props.setMessageOpen(true);
+    props.setMessageID(id);
+    props.setOriginalMessage(message);
   };
 
   return (
@@ -41,6 +49,11 @@ function CartItems(props) {
             <span onClick={addItemHandler}>+</span>
           </div>
           <h1 onClick={deleteItemHandler}>Remove</h1>
+          <h1 onClick={messageHandler}>
+            <Gift style={{ marginRight: "3" }} />
+            Gift Message
+          </h1>
+          <h2 className={classes.message}>{message}</h2>
         </div>
       </div>
     </>

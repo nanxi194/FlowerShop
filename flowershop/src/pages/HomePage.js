@@ -5,10 +5,14 @@ import homeimg from "../assets/homeimg.jpg";
 import NewArrival from "../components/NewArrival";
 import Discover from "../components/Discover";
 import Footer from "../components/Footer";
+import { useDispatch } from "react-redux";
+import { navigationActions } from "../store/navigation-slice";
 
 function HomePage() {
   const loader = useLoaderData();
   const data = loader.message;
+  const dispatch = useDispatch();
+  dispatch(navigationActions.toggle_navigation(true));
 
   return (
     <>

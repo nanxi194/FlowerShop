@@ -17,6 +17,7 @@ function FlowerCard(props) {
         title: title,
         price: price,
         src: src,
+        message: "",
       })
     );
     setTimeout(() => {

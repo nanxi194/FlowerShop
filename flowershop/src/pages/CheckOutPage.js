@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import classes from "./CheckOutPage.module.css";
 import SubmitForm from "../components/SubmitForm";
 import { Link } from "react-router-dom";
-import PlaceComponent from "../components/PlaceComponent";
 
 function CheckOutPage() {
   const cartSubtotal = useSelector((state) => state.cart.subtotal);
@@ -35,7 +34,10 @@ function CheckOutPage() {
                     src={item.src}
                     className={classes.imge}
                   ></img>
-                  <p>{item.name}</p>
+                  <div>
+                    <p>{item.name}</p>
+                    <h2 className={classes.message}>Message: {item.message}</h2>
+                  </div>
                   <p>${item.totalPrice.toFixed(2)}</p>
                   <p>Quantity: {item.quantity}</p>
                 </div>

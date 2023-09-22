@@ -227,9 +227,17 @@ function SubmitForm() {
             </button>
           </Link>
 
-          <button className={classes.submit} type="submit">
-            Continue to Payment
-          </button>
+          <Link
+            key={"submitted"}
+            to={"/submitted"}
+            style={{ textDecoration: "none" }}
+            className={classes.submit}
+          >
+            <button type="submit">Finish checkout</button>
+          </Link>
+          {/* <button className={classes.submit} type="submit">
+            Finish checkout
+          </button> */}
         </div>
       </form>
     </>

@@ -3,8 +3,12 @@ import classes from "./AddOnPage.module.css";
 import AddOnCard from "../components/AddOnCard";
 import Footer from "../components/Footer";
 import { useLoaderData, json } from "react-router-dom";
+import { navigationActions } from "../store/navigation-slice";
+import { useDispatch } from "react-redux";
 
 function AddOnPage() {
+  const dispatch = useDispatch();
+  dispatch(navigationActions.toggle_navigation(true));
   const loader = useLoaderData();
   const DUMMY_ADDONS = loader.add_ons;
 

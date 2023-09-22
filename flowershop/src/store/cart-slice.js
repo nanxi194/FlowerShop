@@ -27,6 +27,7 @@ const cartSlice = createSlice({
           totalPrice: newItem.price,
           name: newItem.title,
           src: newItem.src,
+          message: newItem.message,
         });
       } else {
         existingItem.quantity++;
@@ -52,6 +53,16 @@ const cartSlice = createSlice({
       state.totalQuantity = state.totalQuantity - existingItem.quantity;
       state.subtotal = state.subtotal - existingItem.totalPrice;
       state.items = state.items.filter((item) => item.id !== id);
+    },
+    addMessageToCart(state, action) {
+      const newMessage = action.payload;
+      const existingItem = state.items.find(
+        (item) => item.id === newMessage.id
+      );
+
+      if (existingItem) {
+        existingItem.message = newMessage.message;
+      }
     },
   },
 });

@@ -122,6 +122,49 @@ const DUMMY_PRODUCTS = [
       "Shocking Pink Rose (12 Stalks), White Carnation Spray(5 Stalks), Purple Caspia",
     same_day_delivery: "Same day delivery",
   },
+  {
+    image:
+      "https://bouqs.com/product_images/purple-pompons-mums-burgundy-carnations/Deluxe/64ee809022b85c009ae4ecc0/detail.jpg?c=1693352080",
+    image_hover:
+      "https://bouqs.com/product_images/purple-pompons-mums-burgundy-carnations/Deluxe/64ee805610d69a008e824063/detail.jpg?c=1693352023",
+    image_detail:
+      "https://bouqs.com/product_images/purple-pompons-mums-burgundy-carnations/Deluxe/64ee805610d69a008e824063/detail.jpg?c=1693352023",
+    id: "p6",
+    price: 89,
+    title: "Scarlett",
+    color: ["Pink", "Orange"],
+    avaliability: "In stock",
+    types: ["Roses"],
+    dimensions: [38, 30],
+    arrangements: "Flower Bouquets",
+    collection: "wedding",
+    description:
+      "All in lovely shades from white to pink, Romy is a crisp mix of fragrant roses, daisies, and alstroemerias.",
+    blooms: "This bouquet includes pompons, mums, carnations, and more.",
+    same_day_delivery: "Same day delivery",
+  },
+  {
+    image:
+      "https://bouqs.com/product_images/orchid-ginger-sansevieria/Original/62a24b39faf0ff0095958282/detail.jpg?c=1654803257",
+    image_hover:
+      "https://bouqs.com/product_images/orchid-ginger-sansevieria/Original/62a24b2a81f6da0087fa0b01/detail.jpg?c=1654803242",
+    image_detail:
+      "https://bouqs.com/product_images/orchid-ginger-sansevieria/Original/62a24b2a81f6da0087fa0b01/detail.jpg?c=1654803242",
+    id: "p7",
+    price: 120,
+    title: "Copacabana",
+    color: ["Yellow", "White"],
+    avaliability: "In stock",
+    types: ["Lilies"],
+    dimensions: [38, 30],
+    arrangements: "Flower Bouquets",
+    collection: "care",
+    description:
+      "All in lovely shades from white to pink, Romy is a crisp mix of fragrant roses, daisies, and alstroemerias.",
+    blooms:
+      "Vibrant tropical arrangement featuring yellow Cymbidium orchid, Ginger, and Sansevieria. White Marina vase included.",
+    same_day_delivery: "Same day delivery",
+  },
 ];
 
 const DUMMY_ADDONS = [

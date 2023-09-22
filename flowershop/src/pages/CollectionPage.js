@@ -2,10 +2,14 @@ import React from "react";
 import Footer from "../components/Footer";
 import classes from "./CollectionPage.module.css";
 import { Link, useLoaderData } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { navigationActions } from "../store/navigation-slice";
 
 function CollectionPage() {
   const loader = useLoaderData();
   const data = loader.message;
+  const dispatch = useDispatch();
+  dispatch(navigationActions.toggle_navigation(true));
   const pd1 =
     "https://bouqs.com/product_images/pink-roses-oriental-lilies-vase/Original/64f0daa591c06100856de742/detail.jpg?c=1693506213";
   const pd4 =

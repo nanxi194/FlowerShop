@@ -7,10 +7,12 @@ import { cart_actionActions } from "../store/cart_action-slice";
 import { filterActions } from "../store/filter-slice";
 import Footer from "../components/Footer";
 import FilterItems from "../components/FilterItems";
+import { navigationActions } from "../store/navigation-slice";
 
 function FlowersPage(props) {
   const flowerData = props.data;
   const dispatch = useDispatch();
+  dispatch(navigationActions.toggle_navigation(true));
 
   const products = useSelector((state) => state.filter.products);
   const totalProducts = useSelector((state) => state.filter.totalProducts);

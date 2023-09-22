@@ -109,6 +109,15 @@
   margin-top: 2rem;
 }
 
+.message {
+  width: 200px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 12px;
+  font-weight: 400;
+}
+
 /*********************************** responsive ************************************/
 
 /* Responsive */
