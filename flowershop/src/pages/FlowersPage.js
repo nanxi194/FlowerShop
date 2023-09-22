@@ -17,6 +17,21 @@ function FlowersPage(props) {
   const products = useSelector((state) => state.filter.products);
   const totalProducts = useSelector((state) => state.filter.totalProducts);
 
+  const [numberOfitemsShown, setNumberOfitemsShown] = useState(8);
+
+  const totalItems = products.length;
+  const showMore = () => {
+    if (numberOfitemsShown + 4 <= totalItems) {
+      setNumberOfitemsShown(numberOfitemsShown + 4);
+    } else {
+      setNumberOfitemsShown(totalItems);
+    }
+  };
+
+  const showLess = () => {
+    setNumberOfitemsShown(8);
+  };
+
   const showSidebar = () => {
     dispatch(cart_actionActions.toggle_filter());
   };
@@ -46,6 +61,19 @@ function FlowersPage(props) {
     }
   }
 
+  const itemsToShow = products
+    .slice(0, numberOfitemsShown)
+    .map((product, i) => (
+      <FlowerCard
+        key={i}
+        title={product.title}
+        price={product.price}
+        src={product.image}
+        src_hvoer={product.image_hover}
+        data={product}
+      />
+    ));
+
   return (
     <>
       <div className={classes.flexcontainer}>
@@ -67,17 +95,14 @@ function FlowersPage(props) {
 
       <FilterItems data={flowerData} sort={sort} />
 
-      <div className={classes.cards}>
-        {products.map((product, i) => (
-          <FlowerCard
-            key={i}
-            title={product.title}
-            price={product.price}
-            src={product.image}
-            src_hvoer={product.image_hover}
-            data={product}
-          />
-        ))}
+      <div className={classes.cards}>{itemsToShow}</div>
+
+      <div className={classes.show_products}>
+        {numberOfitemsShown === totalItems ? (
+          <button onClick={showLess}>Load less</button>
+        ) : (
+          <button onClick={showMore}>Load more</button>
+        )}
       </div>
 
       <Footer />

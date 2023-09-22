@@ -48,6 +48,48 @@ select {
   line-height: normal;
 }
 
+.show_products {
+  margin-top: 8rem;
+  position: absolute;
+  left: 45%;
+}
+
+.show_products button {
+  padding: 10px;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-align: center;
+
+  height: 2.5rem;
+  width: 8rem;
+  cursor: pointer;
+  background-color: #000000;
+  border: 1px solid #000000;
+
+  transition: all 0.7s ease;
+  cursor: pointer;
+  background: linear-gradient(to left, #000000 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.show_products button:hover,
+button:hover {
+  outline: 0;
+  color: #000000;
+  background-position: left bottom;
+}
+
+.show_products button:active,
+button:active {
+  outline: 0;
+  color: #000000;
+}
+
 /*********************************** responsive ************************************/
 
 /* Responsive */
@@ -56,21 +98,33 @@ select {
   .cards {
     grid-template-columns: repeat(1, 1fr);
   }
+  .show_products {
+    left: 35%;
+  }
 }
 
 @media (min-width: 600px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+  .show_products {
+    left: 40%;
+  }
 }
 @media (min-width: 900px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .show_products {
+    left: 45%;
   }
 }
 
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .show_products {
+    left: 45%;
   }
 }

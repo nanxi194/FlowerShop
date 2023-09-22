@@ -165,6 +165,50 @@ const DUMMY_PRODUCTS = [
       "Vibrant tropical arrangement featuring yellow Cymbidium orchid, Ginger, and Sansevieria. White Marina vase included.",
     same_day_delivery: "Same day delivery",
   },
+  {
+    image:
+      "https://bouqs.com/product_images/yellow-peach-roses-chrysanthemum-lily/Deluxe/64ee7e943d29a30094dd19dc/detail.jpg?c=1693351572",
+    image_hover:
+      "https://bouqs.com/product_images/yellow-peach-roses-chrysanthemum-lily/Deluxe/64ee7e83e5fbfe00950c87ac/detail.jpg?c=1693351555",
+    image_detail:
+      "https://bouqs.com/product_images/yellow-peach-roses-chrysanthemum-lily/Deluxe/64ee7e83e5fbfe00950c87ac/detail.jpg?c=1693351555",
+    id: "p8",
+    price: 60,
+    title: "Amber",
+    color: ["Yellow", "Orange"],
+    avaliability: "In stock",
+    types: ["Roses", "Lilies"],
+    dimensions: [38, 30],
+    arrangements: "Flower Bouquets",
+    collection: "love",
+    description:
+      "The Amber Bouq is a fall must-have. This arrangement comes in our two-toned clay vase and features roses, chrysanthemum, and lily blooms.",
+    blooms:
+      "Red lilies, peach and yellow roses, bronze chrysanthemums and sprigs of yellow solidago.",
+    same_day_delivery: "Same day delivery",
+  },
+
+  {
+    image:
+      "https://bouqs.com/product_images/yellow-sunflowers-alstroemeria-solidago/Deluxe/64ee7ef21daebd0098b9082b/detail.jpg?c=1693351666",
+    image_hover:
+      "https://bouqs.com/product_images/yellow-sunflowers-alstroemeria-solidago/Deluxe/64ee7edf60be6f009ff429e3/detail.jpg?c=1693351647",
+    image_detail:
+      "https://bouqs.com/product_images/yellow-sunflowers-alstroemeria-solidago/Deluxe/64ee7edf60be6f009ff429e3/detail.jpg?c=1693351647",
+    id: "p9",
+    price: 88,
+    title: "Autumn",
+    color: ["Yellow"],
+    avaliability: "In stock",
+    types: ["Sunflowers"],
+    dimensions: [70, 50],
+    arrangements: "Flower Bouquets",
+    collection: "care",
+    description:
+      "Capture the essence of the season with the Autumn arrangement.",
+    blooms: "Sunny yellow blooms accented by red Leucadendron.",
+    same_day_delivery: "Same day delivery",
+  },
 ];
 
 const DUMMY_ADDONS = [
